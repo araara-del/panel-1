@@ -57,6 +57,8 @@ class Player(Widget):
 
     height = Override(default=250)
 
+    button_scale = Float(1, help="Percentage to scale the size of the buttons by")
+
 
 class SingleSelect(InputWidget):
     ''' Single-select widget.
