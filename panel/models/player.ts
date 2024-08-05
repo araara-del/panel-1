@@ -49,7 +49,7 @@ export class PlayerView extends WidgetView {
   override connect_signals(): void {
     super.connect_signals()
 
-    const {direction, value, loop_policy, disabled, show_loop_controls, scale_buttons, visible_buttons} = this.model.properties
+    const {direction, value, loop_policy, disabled, show_loop_controls, scale_buttons, visible_buttons, visible_loop_options} = this.model.properties
     this.on_change(direction, () => this.set_direction())
     this.on_change(value, () => this.render())
     this.on_change(loop_policy, () => this.set_loop_state(this.model.loop_policy))
@@ -63,7 +63,7 @@ export class PlayerView extends WidgetView {
     })
     this.on_change(scale_buttons, () => this.update_css())
     this.on_change(visible_buttons, () => this.update_css())
-    this.on_change(this.model.properties.visible_loop_options, () => this.update_css())
+    this.on_change(visible_loop_options, () => this.update_css())
   }
 
   toggle_disable() {
